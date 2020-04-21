@@ -471,6 +471,11 @@
   padding: 110px 0px;
   background-color: $grey;
 }
+.products__wrapper,
+.product-slider__wrapper{
+  max-width: 1920px;
+  margin: 0 auto;
+}
 .products__inner-btn{
   text-align: center;
   margin-bottom: 60px;
@@ -492,12 +497,19 @@
 }
 .products___inner-box{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-left: -30px;
   flex-wrap: wrap;
+}
+.products .product__item{
+  flex-basis: calc(25% - 30px);
+  margin-left: 30px;
 }
 .product__item{
   max-width: 420px;
   width: 100%;
+  flex-basis: calc(25% - 30px);
+  margin-left: 30px;
   box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
   margin-bottom: 30px;
   &-img{
@@ -1111,9 +1123,10 @@ button.icon-unsorted{
 }
 .product-page__content{
   .product__item{
-    max-width: 270px;
+    flex-basis: calc(33.3333% - 30px);
     background-color: #fff;
     transition: all .5s;
+    margin-left: 30px;
   }
   .product__item-img{
     min-height: 180px;
@@ -1137,9 +1150,10 @@ button.icon-unsorted{
 }
 .product-page__items{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  margin-left: -30px;
 }
 .pagination__list{
   li{
@@ -1206,6 +1220,7 @@ button.icon-unsorted{
 .product__item{
   &.list{
     max-width: 100%;
+    flex-basis: 100%;
     .product__item-img{
       width: 240px;
       float: left;
@@ -1260,7 +1275,7 @@ button.icon-unsorted{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 0;
+  padding: 16px;
 }
 .product-one__images{
   max-width: 829px;
@@ -1433,6 +1448,43 @@ button.icon-unsorted{
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
+  .jq-selectbox__select{
+    height: 27px;
+    padding: 0 45px 0 10px;
+    border: 1px solid #d5d5d5;
+    border-bottom-color: #d5d5d5;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+    font-size: 13px;
+    line-height: 30px;
+    font-family: 'Roboto-Regular', sans-serif;
+    color: #70838d;
+    text-shadow: none;
+  }
+  .jq-selectbox__trigger-arrow{
+    position: absolute;
+    top: -1px;
+    right: -10px;
+    width: 34px;
+    height: 100%;
+    line-height: 30px;
+    font-size: 13px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    &::before{
+      font-family: 'icomoon';
+      content: "\f0d7";
+      color: $green;
+    }
+  }
+  .jq-selectbox__trigger{
+    border-left: none;
+  }
+  .jq-selectbox__dropdown{
+    top: 24px;
+  }
 }
 .price__product{
   font-size: 22px;
